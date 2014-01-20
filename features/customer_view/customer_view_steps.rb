@@ -26,7 +26,7 @@ AfterStep do |scenario|
 end
 
 Given(/^I'm at url '(.*?)'$/) do |url|
-  url(url)
+  build_url(url)
 end
 
 Given(/^I sign in$/) do

@@ -27,7 +27,8 @@ AfterStep do |scenario|
 end
 
 Given(/^I'm at url '(.*?)'$/) do |url|
-  url(url)
+  # build_url if Psych.load_file("../config/config.yml")["build_ip"] if Psych.load_file("config/config.yml")["build_ip"]
+  build_url(url)
 end
 
 Given(/^I sign in$/) do
