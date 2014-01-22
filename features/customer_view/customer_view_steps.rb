@@ -56,7 +56,8 @@ Then(/^the customer should exist$/) do
   @t_driver.send_keys(:id,"pcore-search", @@full_name)
   @t_driver.send_keys(:id,"pcore-search", :return)
   @t_driver.wait_to_appear(:css,"#search-results .row-fluid")  
-  assert_equal(@t_driver.find_element(:xpath,'//*[@id="search-results"]/div[2]/div[1]/h4').text.include?(@@full_name),true)
+  @t_driver.wait_to_appear(:xpath,'//*[@id="search-results"]/div[2]/div[1]/h4')
+  @t_driver.find_element(:xpath,'//*[@id="search-results"]/div[2]/div[1]/h4').text.include?(@@full_name).should be_true 
 end
 
 Given(/^I fill out the customers form$/) do
@@ -104,7 +105,7 @@ Then(/^the customers email should update$/) do
   @wait.until {
     @t_driver.find_element(:xpath,'//*[@id="search-results"]/div[2]/div[1]/h4').text.include?(@@full_name)    
   }
-  assert_equal(@t_driver.find_element(:xpath,'//*[@id="search-results"]/div[2]/div[2]/h4').text.include?('edited'),true)
+  @t_driver.find_element(:xpath,'//*[@id="search-results"]/div[2]/div[2]/h4').text.include?('edited').should be_true
 end
 
 And(/^I add notes to the customer$/) do
