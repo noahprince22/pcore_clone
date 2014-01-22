@@ -4,7 +4,7 @@ require "active_support/core_ext"
 require_relative '../../../step_functions.rb'
 
 require 'pry'
-
+require 'test/unit'
 Before do
  before
 end
@@ -14,6 +14,7 @@ After do |scenario|
 end
 
 AfterStep do |scenario|
+  bool=false
   @t_driver.wait_to_disappear(:id,"load-mask-container")
   #make sure there's no error report 
   if @t_driver.find_elements(:id,"alert-messenger").size>0 and @t_driver.find_element(:id,"alert-messenger").displayed?
@@ -22,11 +23,12 @@ AfterStep do |scenario|
     bool = false
   end 
    
-  assert_equal(false,bool)
+  raise "An alert was raised" if bool
+  # asse rt_equal(false,bool)
 end
 
 Given(/^I'm at url '(.*?)'$/) do |url|
-  url(url)
+  build_url(url)
 end
 
 Given(/^I sign in$/) do
