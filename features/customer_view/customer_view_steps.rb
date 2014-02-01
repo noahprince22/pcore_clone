@@ -60,7 +60,6 @@ Then(/^the customer should exist$/) do
   @t_driver.wait_to_appear(:css,"#search-results .row-fluid")  
   @t_driver.wait_to_appear(:css,'#search-results div.row-fluid.customer')
   actual_name = @t_driver.find_element(:css,'#search-results div.row-fluid.customer').text
-  binding.pry
   bool = actual_name.include?(@@full_name)
   raise "Expected to see #{@@full_name} but saw #{actual_name}" unless bool
 end
