@@ -1,0 +1,4 @@
+pangea_api:
+  :url: "git@github.com:pangea/pangea_api.git"
+  :branch: "master"
+  :test: false
