@@ -2,8 +2,3 @@ pangea_api:
   :url: "git@github.com:pangea/pangea_api.git"
   :branch: "master"
   :test: false
-
-pcore:
-  :url: "git@github.com:pangea/pcore.git"
-  :branch: "production"
-  :test: true
