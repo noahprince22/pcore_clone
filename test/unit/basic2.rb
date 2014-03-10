@@ -14,5 +14,6 @@ describe Bowling, "#score" do
     bowling = Bowling.new
     20.times { bowling.hit(0) }
     bowling.score.should eq(1)
+    puts "alsdkfj2"
   end
 end
