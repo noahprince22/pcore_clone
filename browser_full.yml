@@ -2,8 +2,8 @@
   - :name: "internet_explorer"
     :version: "10"
 
-  # - :name: "internet_explorer"
-  #   :version: "9"
+  - :name: "internet_explorer"
+    :version: "9"
 
   # - :name: "internet_explorer"
     # :version: "8"
